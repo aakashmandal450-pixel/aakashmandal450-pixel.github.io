@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aakash Mandal · Portfolio</title>
+<title>Aakash Mandal</title>
 <meta name="description" content="Aakash Mandal: civil engineer and geospatial researcher from Nepal working on GLOF modelling, landslide susceptibility mapping and dam-breach simulation software.">
 <meta name="author" content="Aakash Mandal">
-<meta property="og:title" content="Aakash Mandal · Civil Engineer & Geospatial Researcher">
+<meta property="og:title" content="Aakash Mandal, civil engineer">
 <meta property="og:description" content="GLOF hydrodynamic modelling, ML landslide susceptibility mapping, and Dam Breach Studio, a process-based dam-breach model.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#04070E">
@@ -367,9 +367,9 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="term-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>identity.session</span></div>
         <div class="term-body">
           <div class="prompt"><span class="u">aakash@pulchowk</span>:~$ whoami</div>
-          <h1>Aakash Mandal. <span class="hl">Engineering the future through research, data &amp; technology.</span></h1>
-          <div class="typed" aria-live="polite"><span class="sr">Roles: Civil Engineer, Geospatial Researcher, Hydrology &amp; GLOF Modeller, Machine Learning Enthusiast, Scientific Software Developer.</span><span id="typed" aria-hidden="true">Civil Engineer</span><span class="caret" aria-hidden="true">&nbsp;</span></div>
-          <p class="lede">I work at the intersection of civil engineering, geospatial science, and computational modelling to understand natural hazards and develop practical engineering solutions.</p>
+          <h1>Aakash Mandal. <span class="hl">I study floods, landslides and dam breaches in Nepal.</span></h1>
+          <div class="typed" aria-live="polite"><span class="sr">Areas: civil engineering, GIS, flood modelling, Python.</span><span id="typed" aria-hidden="true">civil engineering</span><span class="caret" aria-hidden="true">&nbsp;</span></div>
+          <p class="lede">I'm a civil engineering graduate from Pulchowk Campus. I use GIS, hydraulic models and Python to study glacial lake floods and landslides, and I'm currently writing an open-source dam-breach model.</p>
           <div class="chips">
             <span class="chip"><svg><use href="#i-wave"/></svg>GLOF &amp; dam breach</span>
             <span class="chip"><svg><use href="#i-layers"/></svg>Geospatial ML</span>
@@ -411,9 +411,9 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
     <div class="sec-head reveal"><span class="sec-no">01 /</span><h2>About</h2></div>
     <div class="about">
       <div class="about-text reveal">
-        <p>I am a Civil Engineering graduate from Pulchowk Campus, Institute of Engineering, Tribhuvan University, Nepal. My interests lie in geospatial science, hydrology, natural hazards, remote sensing, and computational modelling.</p>
-        <p>My work combines engineering principles with spatial data analysis and machine learning. I have worked on glacial lake outburst flood modelling, landslide susceptibility assessment, and the development of physics-based dam breach simulation software.</p>
-        <p>I enjoy turning complex engineering problems into practical analytical tools and reproducible research workflows. I also spent a year as a site engineer on a 200 MW hydropower project in Dolakha, supervising tunnelling and Bailey bridge works.</p>
+        <p>I graduated in civil engineering from Pulchowk Campus, Institute of Engineering, Tribhuvan University. I'm mainly interested in hydrology, natural hazards, GIS and remote sensing.</p>
+        <p>So far I'm first author of one published paper on a glacial lake outburst flood and second author of a preprint on landslide mapping, and I'm building a dam-breach model called Dam Breach Studio. I'm still learning, and I like turning what I learn into code that others can check and reuse.</p>
+        <p>Before research, I worked for a year as a site engineer on a 200 MW hydropower project in Dolakha, supervising tunnelling and Bailey bridge work.</p>
       </div>
       <div class="profile reveal">
         <h3>Technical profile</h3>
@@ -435,7 +435,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
 <section class="block" id="work">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-no">02 /</span><h2>Research &amp; featured projects</h2>
-      <p>Three studies on how mountain hazards start and where they go: a dam-breach model, a published GLOF study, and a landslide susceptibility framework.</p></div>
+      <p>The three projects I have worked on so far.</p></div>
     <div class="cases">
 
       <!-- Dam Breach Studio -->
@@ -443,22 +443,22 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="case-top"><span>PROJECT 01 · Scientific Software Development · 2026 – Present</span><span class="badge live"><i></i>Ongoing · research code</span></div>
         <div class="case-body">
           <div>
-            <h3>Dam Breach Studio: Mechanistic Dam-Breach &amp; GLOF Hazard-Screening Tool</h3>
-            <p class="desc">An open-source model of how earthen and moraine dams breach, from the trigger (piping, overtopping, or an ice or rock avalanche into the lake) to the outflow hydrograph. It computes breach growth from hydraulics and erosion instead of prescribing final breach dimensions from regressions. Developed as an independent researcher while working as a Research Assistant at the Center for Applied Research and Development (CARD).</p>
+            <h3>Dam Breach Studio: a dam-breach and GLOF model</h3>
+            <p class="desc">A model I'm writing to simulate how earthen and moraine dams fail, from the trigger (piping, overtopping, or an avalanche into the lake) to the flood hydrograph. Most studies take the breach size from regression equations; this model tries to calculate it from hydraulics and erosion instead. I work on it as an independent project while I'm a Research Assistant at the Center for Applied Research and Development (CARD). It is still in development and only partly validated.</p>
             <ul class="pts">
-              <li>Time-marching 1D breach engine in the browser that tracks reservoir stage, breach geometry and discharge together.</li>
-              <li>Overtopping and piping failure, with pipe enlargement, roof collapse and WinDAM-style headcut migration.</li>
-              <li>Moraine bank stability through discrete mass wasting (1D) and Culmann factor-of-safety collapse (2D).</li>
-              <li>VAW 2D/3D impulse-wave procedures for avalanche- and landslide-triggered GLOF waves.</li>
+              <li>A 1D model that runs in the browser and tracks lake level, breach size and outflow over time.</li>
+              <li>Overtopping and piping failures.</li>
+              <li>Collapse of the breach side slopes in moraine dams.</li>
+              <li>Waves caused by an avalanche or landslide falling into the lake.</li>
             </ul>
             <details class="more">
-              <summary>Engine details &amp; verification</summary>
+              <summary>More technical detail</summary>
               <div class="inner">
                 <ul class="pts">
-                  <li>2D finite-volume shallow-water engine in Python/NumPy: HLL Riemann solver, well-balanced hydrostatic reconstruction, Exner bed updating, so breach location and shape emerge from the solution.</li>
+                  <li>A 2D version in Python/NumPy that solves the shallow-water equations, so the breach location and shape are not fixed in advance.</li>
                   <li>Cohesive erosion from Wan &amp; Fell or Hanson JET erodibility; granular transport from Meyer-Peter–Müller with Smart gradation.</li>
-                  <li>67 / 67 verification checks passing, including 25 impulse-wave values extracted directly from the ETH VAW reference workbook.</li>
-                  <li>Teton Dam (1976) peak discharge reproduced within 15%; timing gaps and open defects are documented in the repository.</li>
+                  <li>67 of 67 code checks pass, including 25 checked against the ETH VAW impulse-wave workbook.</li>
+                  <li>Tested on the 1976 Teton Dam failure: the peak flow is within 15%, but the timing is still off. Known problems are listed in the repository.</li>
                   <li>Hydrographs export to CSV, JSON and Excel for downstream routing in HEC-RAS.</li>
                 </ul>
               </div>
@@ -484,7 +484,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="case-body">
           <div>
             <h3>Hydrodynamic Modelling of Glacial Lake Outburst Flood in Lower Barun Lake</h3>
-            <p class="desc">A published study of potential GLOF scenarios from Lower Barun Lake in the Nepal Himalaya, focused on downstream settlements and the Arun-3 Hydropower Project. I led the geospatial analysis and spatial outputs.</p>
+            <p class="desc">A study with five other students and our supervisor on what could happen if Lower Barun Lake, in eastern Nepal, burst. We looked at the villages downstream and the Arun-3 hydropower project. My part was the GIS inundation maps and the HEC-RAS model.</p>
             <ul class="pts">
               <li>2D hydrodynamic routing in HEC-RAS on a 12.5 m ALOS PALSAR DEM.</li>
               <li>Breach hydrographs generated with FLDWAV for avalanche-induced and Upper Barun cascade scenarios.</li>
@@ -547,7 +547,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="case-body">
           <div>
             <h3>Multi-Scale Pixel and Slope-Unit Landslide Susceptibility Mapping with Applicability-Domain Validation</h3>
-            <p class="desc">A geospatial machine-learning study of landslide susceptibility along the Karnali Highway corridor in western Nepal. The preprint is on EarthArXiv and the manuscript is under peer review.</p>
+            <p class="desc">A landslide mapping study along the Karnali Highway in western Nepal, led by Ayush Karki. I am the second author. The preprint is on EarthArXiv and the paper is under review.</p>
             <ul class="pts">
               <li>Pixel-based susceptibility mapping at three analysis grids (3 m, 15 m, 25 m).</li>
               <li>Slope-unit terrain analysis with r.slopeunits, tuned by a Global Heterogeneity criterion.</li>
@@ -678,8 +678,8 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
   <div class="wrap contact">
     <div class="reveal">
       <span class="sec-no">06 /</span>
-      <h2>Have a research idea or engineering challenge?</h2>
-      <p class="intro">I'm always interested in connecting with researchers, engineers, and developers working on geospatial science, hydrology, natural hazards, and scientific software.</p>
+      <h2>Get in touch</h2>
+      <p class="intro">If you'd like to talk about my work, a position, or a project, email me.</p>
       <ul class="clist">
         <li><svg><use href="#i-mail"/></svg><small>Email</small><a href="mailto:aakashmandal450@gmail.com">aakashmandal450@gmail.com</a><button class="copy" type="button" id="copyEmail">Copy</button></li>
         <li><svg><use href="#i-pin"/></svg><small>Location</small>Lalitpur, Nepal</li>
@@ -706,7 +706,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
 
 <footer>
   <div class="wrap">
-    <div><div class="brand">Aakash Mandal</div><div class="form-note" style="margin-top:4px">Built with curiosity, engineering, and a passion for solving real-world problems.</div></div>
+    <div><div class="brand">Aakash Mandal</div><div class="form-note" style="margin-top:4px">Thanks for visiting.</div></div>
     <nav aria-label="Footer">
       <a href="#about">About</a><a href="#work">Research</a><a href="#publications">Publications</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
     </nav>
@@ -741,7 +741,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
   nl.addEventListener('click', function(e){ if(e.target.closest('a[href^="#"]')){ nl.classList.remove('open'); mb.setAttribute('aria-expanded', false);} });
 
   // typing effect
-  var roles = ['Civil Engineer','Geospatial Researcher','Hydrology & GLOF Modeller','Machine Learning Enthusiast','Scientific Software Developer'];
+  var roles = ['civil engineering','GIS and remote sensing','flood and dam-breach modelling','Python and machine learning'];
   var el = document.getElementById('typed');
   if(!reduce){
     var r = 0, i = roles[0].length, del = true;
