@@ -500,9 +500,9 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
               <div><small>Timeline</small><span>Accepted 5 Feb 2025 · Published 14 Feb 2025</span></div>
             </div>
             <div class="metrics">
-              <div><b>3,398</b><span>accesses</span></div>
-              <div><b>6</b><span>citations</span></div>
-              <p>Springer Nature figures as of 3 Nov 2026</p>
+              <div><b class="m-acc">3,398</b><span>accesses</span></div>
+              <div><b class="m-cit">6</b><span>citations</span></div>
+              <p>Springer Nature figures, updated <span class="m-date">3 Nov 2026</span></p>
             </div>
             <div class="links">
               <a class="btn primary" href="https://doi.org/10.1007/s44290-025-00176-1" target="_blank" rel="noopener"><svg><use href="#i-ext"/></svg>Read the publication</a>
@@ -594,7 +594,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
           <h3>Hydrodynamic modelling of glacial lake outburst flood in Lower Barun Lake</h3>
           <div class="auth"><b>Mandal, A.</b>, Adhikari, A., Shakya, A., Dwivedi, A., Bhusal, A., Shrestha, A., &amp; Kafle, M. R.</div>
           <div class="venue">Discover Civil Engineering (Springer Nature), 2(1), 18</div>
-          <div class="doi">DOI 10.1007/s44290-025-00176-1 · 3,398 accesses · 6 citations (Springer, 3 Nov 2026)</div>
+          <div class="doi">DOI 10.1007/s44290-025-00176-1 · <span class="m-acc">3,398</span> accesses · <span class="m-cit">6</span> citations (Springer, <span class="m-date">3 Nov 2026</span>)</div>
         </div>
         <div class="side"><span class="badge pub"><i></i>Published · Open access</span><a class="btn" href="https://doi.org/10.1007/s44290-025-00176-1" target="_blank" rel="noopener">Read paper <svg><use href="#i-ext"/></svg></a></div>
       </div>
@@ -794,6 +794,17 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
   cellgrid(6,14); cellgrid(110,7); cellgrid(214,4);
   var su=document.createElementNS(NSg,'path'); su.setAttribute('d','M318 6h70v70h-70z M318 30c14-4 22 6 34 2s20-10 36-4 M335 6c2 14-6 22 0 36s4 24-2 34 M362 31c4 14 0 26 6 45');g.appendChild(su);
   [['3 m',41],['15 m',145],['25 m',249],['slope units',353]].forEach(function(p){ var t=document.createElementNS(NSg,'text'); t.setAttribute('x',p[1]); t.setAttribute('y',92); t.setAttribute('text-anchor','middle'); t.setAttribute('stroke','none'); t.textContent=p[0]; g.parentNode.parentNode.appendChild(t); });
+
+  // paper metrics: refreshed daily by a GitHub Action into metrics.json
+  try{
+    fetch('metrics.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(m){
+      if(!m) return;
+      function put(cls,v){ if(v==null) return; document.querySelectorAll('.'+cls).forEach(function(n){n.textContent=v}); }
+      if(typeof m.accesses==='number') put('m-acc',m.accesses.toLocaleString('en-US'));
+      if(typeof m.citations==='number') put('m-cit',m.citations.toLocaleString('en-US'));
+      if(m.updated){ var d=new Date(m.updated+'T00:00:00Z'); if(!isNaN(d)) put('m-date',d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})); }
+    }).catch(function(){});
+  }catch(e){}
 
   // citation formats
   var CITE={
