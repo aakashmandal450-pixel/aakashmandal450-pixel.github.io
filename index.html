@@ -444,7 +444,7 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="case-body">
           <div>
             <h3>Dam Breach Studio: a dam-breach and GLOF model</h3>
-            <p class="desc">A model I'm writing to simulate how earthen and moraine dams fail, from the trigger (piping, overtopping, or an avalanche into the lake) to the flood hydrograph. Most studies take the breach size from regression equations; this model tries to calculate it from hydraulics and erosion instead. I work on it as an independent project while I'm a Research Assistant at the Center for Applied Research and Development (CARD). It is still in development and only partly validated.</p>
+            <p class="desc">A model I'm writing to simulate how earthen and moraine dams fail, from the trigger (piping, overtopping, or an avalanche into the lake) to the flood hydrograph. Most studies take the breach size from regression equations; this model tries to calculate it from hydraulics and erosion instead. I work on it as an independent project while I'm a Research Assistant at the Center for Applied Research and Development (CARD). It is still in development. The 2D engine has been tested on blind cases and is used as a screening tool, not a validated predictor.</p>
             <ul class="pts">
               <li>A 1D model that runs in the browser and tracks lake level, breach size and outflow over time.</li>
               <li>Overtopping and piping failures.</li>
@@ -457,13 +457,17 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
                 <ul class="pts">
                   <li>A 2D version in Python/NumPy that solves the shallow-water equations, so the breach location and shape are not fixed in advance.</li>
                   <li>Cohesive erosion from Wan &amp; Fell or Hanson JET erodibility; granular transport from Meyer-Peter–Müller with Smart gradation.</li>
+                  <li>The 2D engine was calibrated under a pre-registered protocol and then tested on 8 blind cases: 2 passed and peaks were too low at field scale, so it is kept as a screening tool.</li>
+                  <li>A lumped 1D engine with a stress-based headcut, with each theory part written and reviewed before the code.</li>
+                  <li>A finite-element limit analysis of pipe-roof collapse, checked against published solutions, drives the piping module.</li>
+                  <li>Now building a spatially resolved 1D Saint-Venant engine for pipe and open-channel flow; the standard verification tests pass.</li>
                   <li>67 of 67 code checks pass, including 25 checked against the ETH VAW impulse-wave workbook.</li>
                   <li>Tested on the 1976 Teton Dam failure: the peak flow is within 15%, but the timing is still off. Known problems are listed in the repository.</li>
                   <li>Hydrographs export to CSV, JSON and Excel for downstream routing in HEC-RAS.</li>
                 </ul>
               </div>
             </details>
-            <div class="stack"><span>TypeScript</span><span>React</span><span>Python</span><span>NumPy</span><span>Engineering hydraulics</span><span>Sediment transport</span></div>
+            <div class="stack"><span>TypeScript</span><span>React</span><span>Python</span><span>NumPy</span><span>Engineering hydraulics</span><span>Sediment transport</span><span>Finite-element analysis</span><span>Model verification</span></div>
             <div class="links">
               <a class="btn primary" href="https://github.com/aakashmandal450-pixel/Dam-Breach-Studio" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>View on GitHub</a>
             </div>
