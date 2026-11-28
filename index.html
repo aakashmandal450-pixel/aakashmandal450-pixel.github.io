@@ -444,25 +444,21 @@ footer .fine{font:12px var(--f-mono);color:var(--muted);flex-basis:100%;display:
         <div class="case-body">
           <div>
             <h3>Dam Breach Studio: a dam-breach and GLOF model</h3>
-            <p class="desc">A model I'm writing to simulate how earthen and moraine dams fail, from the trigger (piping, overtopping, or an avalanche into the lake) to the flood hydrograph. Most studies take the breach size from regression equations; this model tries to calculate it from hydraulics and erosion instead. I work on it as an independent project while I'm a Research Assistant at the Center for Applied Research and Development (CARD). It is still in development. The 2D engine has been tested on blind cases and is used as a screening tool, not a validated predictor.</p>
+            <p class="desc">A model I'm writing to simulate how earthen and moraine dams fail, from the trigger (piping, overtopping, or an avalanche into the lake) to the flood hydrograph. Most studies take the breach size from regression equations; this model calculates it from hydraulics and erosion instead. I work on it as an independent project while I'm a Research Assistant at the Center for Applied Research and Development (CARD). It has gone through three stages, each built to fix the limits of the one before.</p>
             <ul class="pts">
-              <li>A 1D model that runs in the browser and tracks lake level, breach size and outflow over time.</li>
-              <li>Overtopping and piping failures.</li>
-              <li>Collapse of the breach side slopes in moraine dams.</li>
-              <li>Waves caused by an avalanche or landslide falling into the lake.</li>
+              <li><b>1. Lumped 1D model (working).</b> Runs in the browser (TypeScript/React) and tracks lake level, breach size and outflow for overtopping, piping and avalanche waves. On the 1976 Teton Dam failure the peak flow is within 15%. <i>Limit:</i> it treats the breach as a single cross-section, so it cannot follow the flow along a pipe, and its piping rules could not reproduce a USDA-ARS piping test.</li>
+              <li><b>2. 2D model (screening tool).</b> A Python/NumPy shallow-water engine, so the breach location and shape are not fixed in advance. <i>Limit:</i> results changed with grid size, and in blind testing only 2 of 8 cases passed, with peaks too low at field scale. It is kept for screening only.</li>
+              <li><b>3. True 1D model (current main project).</b> A Saint-Venant engine that follows the flow from the lake through the pipe into the open channel, designed so the pipe turns into a channel cell by cell as its roof collapses. This removes the hand-over rules of the lumped model and the grid problems of the 2D model. The core verification tests pass.</li>
             </ul>
             <details class="more">
               <summary>More technical detail</summary>
               <div class="inner">
                 <ul class="pts">
-                  <li>A 2D version in Python/NumPy that solves the shallow-water equations, so the breach location and shape are not fixed in advance.</li>
                   <li>Cohesive erosion from Wan &amp; Fell or Hanson JET erodibility; granular transport from Meyer-Peter–Müller with Smart gradation.</li>
-                  <li>The 2D engine was calibrated under a pre-registered protocol and then tested on 8 blind cases: 2 passed and peaks were too low at field scale, so it is kept as a screening tool.</li>
-                  <li>A lumped 1D engine with a stress-based headcut, with each theory part written and reviewed before the code.</li>
-                  <li>A finite-element limit analysis of pipe-roof collapse, checked against published solutions, drives the piping module.</li>
-                  <li>Now building a spatially resolved 1D Saint-Venant engine for pipe and open-channel flow; the standard verification tests pass.</li>
-                  <li>67 of 67 code checks pass, including 25 checked against the ETH VAW impulse-wave workbook.</li>
-                  <li>Tested on the 1976 Teton Dam failure: the peak flow is within 15%, but the timing is still off. Known problems are listed in the repository.</li>
+                  <li>Lumped model: 67 of 67 code checks pass, including 25 against the ETH VAW impulse-wave workbook; Teton timing is still off. A Python reference version adds a stress-based headcut.</li>
+                  <li>2D model: calibrated under a pre-registered protocol before the blind test, so the failures are real and not tuned away.</li>
+                  <li>Pipe-roof collapse comes from my own finite-element limit analysis, checked against published solutions.</li>
+                  <li>True 1D model: working on a stability limit where a pressurised pipe meets the open channel.</li>
                   <li>Hydrographs export to CSV, JSON and Excel for downstream routing in HEC-RAS.</li>
                 </ul>
               </div>
